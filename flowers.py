@@ -49,8 +49,8 @@ def paint_large_flower(flower, x, y):
 
 def paint_random(flower):
   size = random.randint(100, 200)
-  x = random.randint(0, 750) - size / 2
-  y = random.randint(0, 550) - size / 2
+  x = random.randint(0, 750)
+  y = random.randint(0, 550)
   rot = random.randint(1, 360)
   paint_flower(flower, x, y, size, size, rot)
 
@@ -75,21 +75,15 @@ def paint_border(left_flower, top_flower, bottom_flower):
 
 def paint():
   screen.fill(blue)
-  
-  paint_small_flower(pink_flower_1, 10, 10)
-  paint_small_flower(pink_flower_2, 100, 100)
-  paint_small_flower(pink_flower_3, 200, 200)
 
-  paint_normal_flower(pink_flower_1, 200, 10)
-  paint_normal_flower(pink_flower_2, 400, 100)
-  paint_normal_flower(pink_flower_3, 300, 200)
+  paint_random(pink_flower_1)
+  paint_random(pink_flower_2)
+  paint_random(pink_flower_3)
 
-  paint_large_flower(pink_flower_1, 500, 400)
-
-  for i in range(15):
-    paint_random(pink_flower_1)
-    paint_random(pink_flower_2)
-    paint_random(pink_flower_3)
+  paint_large_flower(pink_flower_3, 60, 60)
+  paint_normal_flower(pink_flower_1, 180, 100)
+  paint_medium_flower(pink_flower_2, 220, 220)
+  paint_small_flower(pink_flower_3, 500, 400)
 
   paint_border(pink_flower_1, pink_flower_2, pink_flower_3)
 
