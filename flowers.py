@@ -55,7 +55,7 @@ def paint_random(flower):
   paint_flower(flower, x, y, size, size, rot)
 
 
-def paint_border(left_flower, top_flower, bottom_flower):
+def paint_border(left_flower, right_flower, top_flower, bottom_flower):
   # Top
   pygame.draw.rect(screen, blue2, (0, 0, 800, 50))
   # Bottom
@@ -71,6 +71,7 @@ def paint_border(left_flower, top_flower, bottom_flower):
 
   for i in range(50, 550, 50):
     paint_small_flower(left_flower, 0, i)
+    paint_small_flower(right_flower, 750, i)
 
 
 def paint():
@@ -85,7 +86,10 @@ def paint():
   paint_medium_flower(pink_flower_2, 220, 220)
   paint_small_flower(pink_flower_3, 500, 400)
 
-  paint_border(pink_flower_1, pink_flower_2, pink_flower_3)
+  for i in range(50):
+    paint_random(pink_flower_2)
+
+  paint_border(pink_flower_1, pink_flower_2, pink_flower_2, pink_flower_3)
 
   pygame.display.update()
   
